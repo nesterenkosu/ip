@@ -1,0 +1,28 @@
+h2 {
+	font-style: italic;
+	color: green;
+	font-size: 20pt;
+}
+
+#my_index {
+	color: blue;
+}
+
+.my_class {
+	text-decoration: line-through;
+	font-style: oblique;
+	color: #AA5588;
+}
+
+p {
+	text-indent: 20px;
+	color: blue;
+}
+
+.framed_text {
+	border-style: solid;
+	border-color: black;
+	border-width: 7px;
+	background-color: red;
+	color: yellow;
+}
