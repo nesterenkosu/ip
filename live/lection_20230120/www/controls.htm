@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-3.6.3.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn_go").click(function(){
+					var user_name = $("#user_name").val();
+					var greeting = "Здравствуйте, "+user_name+"!";
+					$("#greeting").html(greeting);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form>
+			Имя:<br/>
+			<input id="user_name" type="text" size="20"/><br/>
+			<input id="btn_go" type="button" value="Нажми сюда!"/><br/>
+			<div id="greeting"></div>
+		</form>
+	</body>
+</html>

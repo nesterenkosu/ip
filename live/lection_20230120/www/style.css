@@ -1,0 +1,16 @@
+h1 {
+	color: blue;
+}
+
+h2 {
+	color: green;
+}
+
+p {
+	text-indent: 20px;
+}
+
+img {
+	float: left;
+	margin: 5px;
+}
