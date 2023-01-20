@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(function() {			
+				//Получить значение
+				$("#btn_get").click(function() {					
+					
+					//Если значения не выбраны из списка
+					if($("#myselect option:selected").length==0)
+						//Вывод сообщения об ошибке
+						alert("Вы ничего не выбрали!");
+					else {
+						var value = "";
+						
+						//Получение значений выбранных элементов
+						$("#myselect option:selected").each(function(idx,item){
+							//alert(item);
+							value+=$(item).val()+" ";
+						});					
+						
+						//Вывод значений выбранных элементов
+						alert("Вы выбрали элементы со следующими значениями: "+value);
+					}						
+					
+					
+				});
+				
+				//Установить значение
+				$("#btn_set").click(function() {
+					//Сброс ранее выбранного значения
+					$("#myselect option").removeAttr("selected");					
+					//Выбор элемента с value=2					
+					$("#myselect option[value='2']").attr("selected","selected");//Выбор элемента с value=3					
+					$("#myselect option[value='3']").attr("selected","selected");						
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form action="" method="POST">
+			<select id="myselect" multiple="multiple">				
+				<option value="1">Пункт 1</option>
+				<option value="2">Пункт 2</option>
+				<option value="3">Пункт 3</option>
+			</select>
+			<br/>			
+			<input id="btn_get" type="button" value="Прочитать"/>
+			<input id="btn_set" type="button" value="Установить (выбрать Пункт 1 и Пункт 2)"/>			
+		</form>
+	</body>
+</html>
