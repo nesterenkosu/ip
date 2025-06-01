@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<input id="mytext" type="text"/><br/>
+			
+		<button onclick="invoke_get()">Прочитать</button>
+		<button onclick="invoke_set()">Установить (значение Hello)</button>
+		<div id="message"></div>
+		
+		<script>
+			//Считывание значения из текстового поля
+			function invoke_get() {  
+			  //Получение введённого пользователем текста
+			  let entered_text = document.getElementById('mytext');  
+			  
+			  //Вывод его на экран
+			  show_message(entered_text.value);
+			}
+
+			//Программная установка значения в текстовом поле
+			function invoke_set(){
+			  //установим в текстовом поле значение Hello
+			 document.getElementById('mytext').value="Hello";  
+			  
+			}
+
+			//Функция вывода сообщений
+			function show_message(message){
+			  document.getElementById("message").innerText = message+"\n";
+			}
+		</script>
+	</body>
+</html>

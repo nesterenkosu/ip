@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<input id="myradio1" class="myradio" 	name="myradio" type="radio" value="1"/><label for="myradio1">Пункт 1</label><br/>
+			
+		<input 	id="myradio2" class="myradio" name="myradio" type="radio" value="2"/><label for="myradio2">Пункт 2</label><br/>
+					
+		<input id="myradio3" class="myradio" name="myradio" type="radio" value="3"/>
+		<label for="myradio3">Пункт 3</label><br/>
+					
+		<button onclick="invoke_get()">Прочитать</button>
+		<button onclick="invoke_set()">Установить (пункт 2)</button>
+		<div id="message"></div>
+		
+		<script>
+			//Считывание значения радиокнопки, выбранной пользователем
+			function invoke_get() {  
+			  //Получение выбранной радиокнопки
+			  let selected_option = document.querySelector('.myradio:checked');  
+			  
+			  //Вывод связанного с ней значения на экран
+			  show_message(selected_option.value);
+			}
+
+			//Программная установка выбранных значений
+			function invoke_set(){
+			  //выберем радиокнопку со значением 2
+			  document.querySelector('.myradio[value="2"]').checked=true;  
+			  
+			}
+
+			//Функция вывода сообщений
+			function show_message(message){
+			  document.getElementById("message").innerText = message+"\n";
+			}
+		</script>
+	</body>
+</html>

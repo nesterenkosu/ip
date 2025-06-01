@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(function() {			
+				//Получить значение
+				$("#btn_get").click(function() {					
+					
+					//Если значение не выбрано из списка
+					if($("#myselect").val()==-1)
+						//Вывод сообщения об ошибке
+						alert("Вы ничего не выбрали!");
+					else {
+						//Получение выбранного из списка значения
+						var value = $("#myselect").val();
+						//Вывод выбранного из списка значения
+						alert("Вы выбрали элемент списка со значением "+value);
+					}	
+				});
+				
+				//Установить значение
+				$("#btn_set").click(function() {
+					//Сброс ранее выбранного значения
+					$("#myselect option").removeAttr("selected");
+					//Выбор элемента со значением 2
+					$("#myselect option[value='2']").attr("selected","selected");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form action="" method="POST">
+			<select id="myselect">
+				<option value="-1">--Выберите что-нибудь--</option>
+				<option value="1">Пункт 1</option>
+				<option value="2">Пункт 2</option>
+				<option value="3">Пункт 3</option>
+			</select>
+			<br/>			
+			<input id="btn_get" type="button" value="Прочитать"/>
+			<input id="btn_set" type="button" value="Установить (выбрать Пункт 2)"/>			
+		</form>
+	</body>
+</html>

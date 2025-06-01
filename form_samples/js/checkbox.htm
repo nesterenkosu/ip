@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<input id="mycheckbox1" class="mycheckbox" type="checkbox" value="1"/>
+		<label for="mycheckbox1">Пункт 1</label><br/>
+					
+		<input id="mycheckbox1" class="mycheckbox" type="checkbox" value="2"/>
+		<label for="mycheckbox2">Пункт 2</label><br/>
+					
+		<input id="mycheckbox3"	class="mycheckbox" type="checkbox" value="3"/>
+		<label for="mycheckbox3">Пункт 3</label><br/>			
+					
+		<button onclick="invoke_get()">Прочитать</button>
+		<button onclick="invoke_set()">Установить (пункты 1 и 3)</button>
+		<div id="message"></div>
+		
+		<script>
+			//Считывание значений чекбоксов, выбранных пользователем
+			function invoke_get() {
+				
+			  //Получение списка выбранных чекбоксов
+			  let selected_checkboxes = document.querySelectorAll('.mycheckbox:checked');
+			  
+			  //Вывод их на экран
+			  selected_checkboxes.forEach(item=>{
+				show_message(item.value);   
+			  });
+			}
+
+			//Программная установка выбранных значений
+			function invoke_set(){
+			  //выберем чекбоксы со значениями 1 и 3
+			  document.querySelector('.mycheckbox[value="1"]').checked=true;
+			  document.querySelector('.mycheckbox[value="3"]').checked=true;
+			}
+
+			//Функция вывода сообщений
+			function show_message(message){
+			  document.getElementById("message").innerText += message+"\n";
+			}
+		</script>
+	</body>
+</html>

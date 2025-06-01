@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(function() {
+			
+				//Получить значение
+				$("#get").click(function() {					
+					
+					//Если не выбрана ни одна радиокнопка
+					if($(".myradio:checked").length==0)
+						//Вывод сообщения об ошибке
+						alert("Вы ничего не выбрали!");
+					else {
+						//Получение значения выбранной радиокнопки
+						var value = $(".myradio:checked").val();
+						//Вывод значения выбранной радиокнопки
+						alert("Вы выбрали радиокнопку со значением "+value);
+					}	
+					
+				});
+				
+				//Установить значение
+				$("#set").click(function() {
+					//Выбор радиокнопки со значением 2
+					$(".myradio[value='2']").attr("checked","checked");	
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form action="" method="POST">
+			<input 
+				id="myradio1" 
+				class="myradio" 
+				name="myradio" 
+				type="radio" 
+				value="1"
+			/><label for="myradio1">Пункт 1</label><br/>
+			
+			<input 
+				id="myradio2" 
+				class="myradio" 
+				name="myradio" 
+				type="radio" 
+				value="2"
+			/><label for="myradio2">Пункт 2</label><br/>
+			
+			<input 
+				id="myradio3" 
+				class="myradio" 
+				name="myradio" 
+				type="radio" 
+				value="3"
+			/><label for="myradio3">Пункт 3</label><br/>
+			
+			<input id="get" type="button" value="Прочитать"/>
+			<input id="set" type="button" value="Установить (выбрать пункт 2)"/>			
+		</form>
+	</body>
+</html>

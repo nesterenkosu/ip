@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<select id="myselect">
+		  <option value="1">Пункт 1</option>
+		  <option value="2">Пункт 2</option>
+		  <option value="3">Пункт 3</option>
+		</select><br/>
+		<button onclick="invoke_get()">Прочитать</button>
+		<button onclick="invoke_set()">Установить (пункт 2)</button>
+		<div id="message"></div>
+		
+		<script>
+			//Считывание значения, выбранного из списка пользователем
+			function invoke_get() {  
+			  //Получение выбранного пункта списка
+			  let selected_option = document.querySelector('#myselect option:checked');
+			  
+			  //или так
+			  //let selected_option = document.getElementById('myselect');
+			  
+			  //Вывод его на экран
+			  show_message(selected_option.value);
+			}
+
+			//Программная установка выбранных значений
+			function invoke_set(){
+			  //выберем элемент списка со значением 2
+			  document.querySelector('#myselect option[value="2"]').selected=true;  
+			  
+			  //или так
+			  //document.getElementById('myselect').value=2;
+			}
+
+			//Функция вывода сообщений
+			function show_message(message){
+			  document.getElementById("message").innerText = message+"\n";
+			}
+		</script>
+	</body>
+</html>
